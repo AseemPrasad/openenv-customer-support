@@ -1,0 +1,51 @@
+name: customer_support_env
+version: 0.1.0
+description: >
+  An OpenEnv environment simulating a customer support chat assistant.
+  Agents interact with customers through text-based conversations, aiming to
+  resolve queries, maintain satisfaction, and escalate appropriately.
+
+authors:
+  - name: Your Name
+    email: your.email@example.com
+
+license: MIT
+
+# Define observation, action, and reward models
+observation:
+  type: ChatState
+  description: Current conversation state including messages, customer profile, and pending queries.
+
+action:
+  type: Action
+  description: Agent response text and optional escalation flag.
+
+reward:
+  type: float
+  description: Dense reward signal based on query resolution, satisfaction change, and escalation behavior.
+
+# API endpoints
+endpoints:
+  reset:
+    description: Initialize environment state for a given task.
+  step:
+    description: Apply agent action, update state, compute reward.
+  state:
+    description: Return current environment state.
+
+# Tasks metadata
+tasks:
+  - id: easy
+    description: Single customer query (FAQ).
+    difficulty: easy
+  - id: medium
+    description: Multiple sequential queries with sentiment variation.
+    difficulty: medium
+  - id: hard
+    description: Multiple simultaneous customers with conflicting needs.
+    difficulty: hard
+
+# Hugging Face Space deployment metadata
+deployment:
+  space_tag: openenv
+  docker: true

@@ -1,4 +1,14 @@
-
+---
+title: OpenEnv Customer Support Chat Assistant
+emoji: 💬
+colorFrom: blue
+colorTo: purple
+sdk: docker
+sdk_version: "1.0"
+python_version: "3.11"
+app_file: server/app.py
+pinned: false
+---
 
 # OpenEnv Customer Support Chat Assistant
 

@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy project files
 COPY . .
 
-# Install uv (dependency manager) and project dependencies
-RUN pip install uv && uv sync
+# Install pip dependencies directly (more reliable than uv sync on Spaces)
+RUN pip install --no-cache-dir fastapi uvicorn openenv-core openai pydantic>=1.10
 
 # Expose port
 EXPOSE 8000

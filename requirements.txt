@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+openenv-core
+openai
+pydantic>=1.10
